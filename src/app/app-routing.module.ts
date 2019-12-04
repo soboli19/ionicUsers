@@ -23,9 +23,22 @@ const routes: Routes = [
     path: 'users',
     loadChildren: () => import('./users/users.module').then( m => m.UsersPageModule)
   },
+  /* {
+    path: 'user',
+    loadChildren: () => import('./user/user.module').then( m => m.UserPageModule)
+  }, */
   {
+    // Check userId or :Id
     path: 'user/:userId',
     loadChildren: () => import('./user/user.module').then( m => m.UserPageModule)
+  },
+  {
+    path: 'user-edit/:userId',
+    loadChildren: () => import('./user-edit/user-edit.module').then( m => m.UserEditPageModule)
+  },
+  {
+    path: 'user-edit',
+    loadChildren: () => import('./user-edit/user-edit.module').then( m => m.UserEditPageModule)
   }
 ];
 
