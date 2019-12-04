@@ -31,6 +31,7 @@ export class AppComponent {
       url: '/users',
       icon: 'people'
     }
+
   ];
 
   constructor(

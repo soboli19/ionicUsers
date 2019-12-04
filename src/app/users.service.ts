@@ -29,6 +29,10 @@ export class UsersService {
     this.url = `${l.protocol}//${host}/api/users/`;
   }
 
+  createUser(user: User): Observable<User>{
+    return this.http.post<User>(this.url, user, httpOptions);
+  }
+  
   getUsers(): Observable<User>{
     return this.http.get<User>(this.url, httpOptions);
   }
@@ -39,5 +43,8 @@ export class UsersService {
 
   updateUser(user: User): Observable<User>{
     return this.http.put<User>(this.url, user, httpOptions);
+  }
+  deleteUser(id: string): Observable<User>{
+    return this.http.delete<User>(this.url + id);
   }
 }
